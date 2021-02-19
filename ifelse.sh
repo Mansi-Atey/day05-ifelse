@@ -1,17 +1,15 @@
 #!/bin/bash
-echo "Enter a day:"
-read day
-echo "Enter a month:"
-read month
+echo "Enter Year:"
+read y
 
-day=$day
-month=$month
+year=$y
 
- if [$month -gt 4] && [$month -lt 6] && [$day -gt 0] && [$day -lt 31 ]
-
-  then
-       echo "True"
-  else
-       echo "False"
+y=$(( $y % 4 ))
+if [ $y -eq 0 ]
+then
+    echo "$year is Leap Year!"
+else
+    echo "$year is not a Leap Year!"
 fi
+
 
